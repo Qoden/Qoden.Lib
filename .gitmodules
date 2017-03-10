@@ -1,0 +1,21 @@
+[submodule "Qoden.Reflection"]
+	path = Qoden.Reflection
+	url = https://github.com/Qoden/Qoden.Reflection.git
+[submodule "Qoden.Binding"]
+	path = Qoden.Binding
+	url = https://github.com/Qoden/Qoden.Binding.git
+[submodule "Qoden.Calendar"]
+	path = Qoden.Calendar
+	url = https://github.com/Qoden/Qoden.Calendar.git
+[submodule "Qoden.Format"]
+	path = Qoden.Format
+	url = https://github.com/Qoden/Qoden.Format.git
+[submodule "Qoden.SlideController"]
+	path = Qoden.SlideController
+	url = https://github.com/Qoden/Qoden.SlideController.git
+[submodule "Qoden.UI"]
+	path = Qoden.UI
+	url = https://github.com/Qoden/Qoden.UI.git
+[submodule "Qoden.Validation"]
+	path = Qoden.Validation
+	url = https://github.com/Qoden/Qoden.Validation.git

@@ -1,0 +1,101 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Reflection", "Qoden.Reflection\Qoden.Reflection\Qoden.Reflection.csproj", "{57C412C4-BFB9-4AA1-B22E-27E4947D2BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Format", "Qoden.Format\Qoden.Format\Qoden.Format.csproj", "{B21280F7-C63F-4EC6-8E15-D864E5A7DEA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Binding", "Qoden.Binding\Qoden.Binding\Qoden.Binding.csproj", "{5D196C87-1190-434D-ADBE-0D2291C71856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Validation", "Qoden.Validation\Qoden.Validation\Qoden.Validation.csproj", "{9EA7946E-3558-46DF-8AAE-BDAEE19F787D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94C34C9F-1672-42DF-9FE1-863EBA714B80}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+		Qoden.sln = Qoden.sln
+		rebuild.sh = rebuild.sh
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Validation.Test", "Qoden.Validation\Qoden.Validation.Test\Qoden.Validation.Test.csproj", "{F0130788-DF8A-497E-AFC2-41B7F5CD035E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Binding.Test", "Qoden.Binding\Qoden.Binding.Test\Qoden.Binding.Test.csproj", "{AC74AFD0-3246-456A-BB33-4FAA7748E593}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{77894A8D-545A-4B19-B852-333C69A7B448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.UI", "Qoden.UI\Qoden.UI\Qoden.UI.csproj", "{4C4CA549-EB91-484E-B93D-8DD449702429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.UI.iOS", "Qoden.UI\Qoden.UI.iOS\Qoden.UI.iOS.csproj", "{FFE30417-BB9D-4669-9BE8-3866380BE603}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SlideController", "SlideController", "{2F83DB07-C5C2-4336-9754-5CC5B500B7D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.SlideController.iOS", "Qoden.SlideController\Qoden.SlideController.iOS\Qoden.SlideController.iOS.csproj", "{665D3C5C-9E55-41A6-81C7-02FB7FFA4C9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binding", "Binding", "{8B9D6CF6-2AB0-4E34-BD82-B4AF97E9FA4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{F7DF41B4-2460-4677-AF4E-AA6FC3CF348E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calendar", "Calendar", "{A4D2A66A-FC04-48BA-9D1A-56C03A962A79}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Qoden.Calendar", "Qoden.Calendar\Qoden.Calendar\Qoden.Calendar.shproj", "{F6CE7713-2018-4060-9E36-F78048662C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Calendar.iOS", "Qoden.Calendar\Qoden.Calendar.iOS\Qoden.Calendar.iOS.csproj", "{C2D631A9-BC08-47D9-92B7-5F9482A3A58A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57C412C4-BFB9-4AA1-B22E-27E4947D2BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C412C4-BFB9-4AA1-B22E-27E4947D2BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C412C4-BFB9-4AA1-B22E-27E4947D2BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C412C4-BFB9-4AA1-B22E-27E4947D2BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21280F7-C63F-4EC6-8E15-D864E5A7DEA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21280F7-C63F-4EC6-8E15-D864E5A7DEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21280F7-C63F-4EC6-8E15-D864E5A7DEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21280F7-C63F-4EC6-8E15-D864E5A7DEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D196C87-1190-434D-ADBE-0D2291C71856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D196C87-1190-434D-ADBE-0D2291C71856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D196C87-1190-434D-ADBE-0D2291C71856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D196C87-1190-434D-ADBE-0D2291C71856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA7946E-3558-46DF-8AAE-BDAEE19F787D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA7946E-3558-46DF-8AAE-BDAEE19F787D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA7946E-3558-46DF-8AAE-BDAEE19F787D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA7946E-3558-46DF-8AAE-BDAEE19F787D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0130788-DF8A-497E-AFC2-41B7F5CD035E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0130788-DF8A-497E-AFC2-41B7F5CD035E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0130788-DF8A-497E-AFC2-41B7F5CD035E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0130788-DF8A-497E-AFC2-41B7F5CD035E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC74AFD0-3246-456A-BB33-4FAA7748E593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC74AFD0-3246-456A-BB33-4FAA7748E593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC74AFD0-3246-456A-BB33-4FAA7748E593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC74AFD0-3246-456A-BB33-4FAA7748E593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C4CA549-EB91-484E-B93D-8DD449702429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4CA549-EB91-484E-B93D-8DD449702429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4CA549-EB91-484E-B93D-8DD449702429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4CA549-EB91-484E-B93D-8DD449702429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE30417-BB9D-4669-9BE8-3866380BE603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE30417-BB9D-4669-9BE8-3866380BE603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE30417-BB9D-4669-9BE8-3866380BE603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE30417-BB9D-4669-9BE8-3866380BE603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{665D3C5C-9E55-41A6-81C7-02FB7FFA4C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{665D3C5C-9E55-41A6-81C7-02FB7FFA4C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{665D3C5C-9E55-41A6-81C7-02FB7FFA4C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{665D3C5C-9E55-41A6-81C7-02FB7FFA4C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D631A9-BC08-47D9-92B7-5F9482A3A58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D631A9-BC08-47D9-92B7-5F9482A3A58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D631A9-BC08-47D9-92B7-5F9482A3A58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D631A9-BC08-47D9-92B7-5F9482A3A58A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C4CA549-EB91-484E-B93D-8DD449702429} = {77894A8D-545A-4B19-B852-333C69A7B448}
+		{FFE30417-BB9D-4669-9BE8-3866380BE603} = {77894A8D-545A-4B19-B852-333C69A7B448}
+		{665D3C5C-9E55-41A6-81C7-02FB7FFA4C9B} = {2F83DB07-C5C2-4336-9754-5CC5B500B7D2}
+		{5D196C87-1190-434D-ADBE-0D2291C71856} = {8B9D6CF6-2AB0-4E34-BD82-B4AF97E9FA4C}
+		{AC74AFD0-3246-456A-BB33-4FAA7748E593} = {8B9D6CF6-2AB0-4E34-BD82-B4AF97E9FA4C}
+		{9EA7946E-3558-46DF-8AAE-BDAEE19F787D} = {F7DF41B4-2460-4677-AF4E-AA6FC3CF348E}
+		{F0130788-DF8A-497E-AFC2-41B7F5CD035E} = {F7DF41B4-2460-4677-AF4E-AA6FC3CF348E}
+		{F6CE7713-2018-4060-9E36-F78048662C94} = {A4D2A66A-FC04-48BA-9D1A-56C03A962A79}
+		{C2D631A9-BC08-47D9-92B7-5F9482A3A58A} = {A4D2A66A-FC04-48BA-9D1A-56C03A962A79}
+	EndGlobalSection
+EndGlobal
