@@ -1,5 +1,4 @@
-#!/bin/bash
-
+﻿#!/bin/bash
 PROJECT=${PROJECT:-all}
 CONFIG=${CONFIG:-Debug}
 REPO=`pwd`/local.nugets
@@ -8,7 +7,7 @@ ROOT=`pwd`
 
 if [ -z "$PROJECT" ]; then
 	echo "rebuild.sh - rebuild and publish all Qoden libraries into local NuGet repo"
-	echo "Usage: PROJECT=path-to-project-folder VERSION=optional-version-suffix CONFIG=build-config rebuild.sh"
+	echo "Usage: PROJECT=path-to-project-folder SUFFIX=optional-version-suffix CONFIG=build-config rebuild.sh"
 	exit 1;
 fi
 
@@ -30,13 +29,16 @@ function rebuild()
 		echo "Info: iOS project detected. Using 'msbuild' and 'nuget' instead of 'dotnet' ==============="	
 
 		if ! nuget restore; then
-			echo "Error: nuget restore '$1' failed";
+			echo "Error: nuget restore '$1' failed. Make sure you use latest nuget 'nuget update -self'";
 			exit 1;
 		fi
 
 		PACK_ARGS="-OutputDirectory bin/$CONFIG -Build -Properties Configuration=$CONFIG"
-		if [ ! -z "$VERSION" ]; then
-			PACK_ARGS="$PACK_ARGS -Suffix $VERSION"
+		if [ ! -z "$SUFFIX" ]; then
+			PACK_ARGS="$PACK_ARGS -Suffix $SUFFIX"
+		else 
+			local SUFFIX=b`git log --oneline | wc -l | tr -d ' '`
+			PACK_ARGS="$PACK_ARGS -Suffix $SUFFIX"
 		fi
 
 		if ! nuget pack $PACK_ARGS; then
@@ -50,12 +52,15 @@ function rebuild()
 			exit 1;
 		fi
 		PACK_ARGS="-c $CONFIG"
-		if [ ! -z "$VERSION" ]; then
-			PACK_ARGS="--version-suffix $VERSION $PACK_ARGS"
+		if [ ! -z "$SUFFIX" ]; then
+			PACK_ARGS="--version-suffix $SUFFIX $PACK_ARGS"
+		else
+			local SUFFIX=b`git log --oneline | wc -l | tr -d ' '`
+			PACK_ARGS="--version-suffix $SUFFIX $PACK_ARGS"
 		fi
 
 		if ! dotnet pack $PACK_ARGS ; then
-			echo "Error: 'dotnet pack --version-suffix $VERSION -c $CONFIG' in '$1' failed";
+			echo "Error: 'dotnet pack --version-suffix $SUFFIX -c $CONFIG' in '$1' failed";
 			exit 1;		
 		fi
 	fi
