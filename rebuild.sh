@@ -25,6 +25,10 @@ function rebuild()
 		exit 1;
 	fi
 
+	if [ -z "$SUFFIX" ]; then
+		local SUFFIX=b`git log --oneline | wc -l | tr -d ' '`
+	fi
+
 	if [[ "$1" == *iOS ]]; then	
 		echo "Info: iOS project detected. Using 'msbuild' and 'nuget' instead of 'dotnet' ==============="	
 
@@ -32,15 +36,7 @@ function rebuild()
 			echo "Error: nuget restore '$1' failed. Make sure you use latest nuget 'nuget update -self'";
 			exit 1;
 		fi
-
-		PACK_ARGS="-OutputDirectory bin/$CONFIG -Build -Properties Configuration=$CONFIG"
-		if [ ! -z "$SUFFIX" ]; then
-			PACK_ARGS="$PACK_ARGS -Suffix $SUFFIX"
-		else 
-			local SUFFIX=b`git log --oneline | wc -l | tr -d ' '`
-			PACK_ARGS="$PACK_ARGS -Suffix $SUFFIX"
-		fi
-
+		PACK_ARGS="-OutputDirectory bin/$CONFIG -Build -Properties Configuration=$CONFIG -Suffix $SUFFIX"
 		if ! nuget pack $PACK_ARGS; then
 			echo "Error: 'nuget pack $PACK_ARGS' failed"
 			exit 1;
@@ -51,14 +47,7 @@ function rebuild()
 			echo "Error: dotnet restore '$1' failed";
 			exit 1;
 		fi
-		PACK_ARGS="-c $CONFIG"
-		if [ ! -z "$SUFFIX" ]; then
-			PACK_ARGS="--version-suffix $SUFFIX $PACK_ARGS"
-		else
-			local SUFFIX=b`git log --oneline | wc -l | tr -d ' '`
-			PACK_ARGS="--version-suffix $SUFFIX $PACK_ARGS"
-		fi
-
+		PACK_ARGS="--version-suffix $SUFFIX -c $CONFIG"
 		if ! dotnet pack $PACK_ARGS ; then
 			echo "Error: 'dotnet pack --version-suffix $SUFFIX -c $CONFIG' in '$1' failed";
 			exit 1;		
@@ -81,5 +70,5 @@ if [ "$PROJECT" == "all" ]; then
 	if ! rebuild Qoden.SlideController/Qoden.SlideController.iOS; then exit 1; fi
 	if ! rebuild Qoden.Calendar/Qoden.Calendar.iOS; then exit 1; fi
 else
-	rebuild $PROJECT
+	rebuild "$PROJECT/$PROJECT"
 fi
