@@ -19,3 +19,15 @@
 [submodule "Qoden.Validation"]
 	path = Qoden.Validation
 	url = https://github.com/Qoden/Qoden.Validation.git
+[submodule "Serilog"]
+	path = Serilog
+	url = https://github.com/Qoden/Serilog.git
+[submodule "Qoden.Serilog"]
+	path = Qoden.Serilog
+	url = https://github.com/Qoden/Serilog.git
+[submodule "Qoden.Auth"]
+	path = Qoden.Auth
+	url = https://github.com/Qoden/Qoden.Auth.git
+[submodule "Qoden.Util"]
+	path = Qoden.Util
+	url = https://github.com/Qoden/Qoden.Util.git

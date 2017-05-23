@@ -1,4 +1,5 @@
 ﻿#!/bin/bash
+
 PROJECT=${PROJECT:-all}
 CONFIG=${CONFIG:-Debug}
 REPO=`pwd`/local.nugets
@@ -29,13 +30,14 @@ function rebuild()
 		local SUFFIX=b`git log --oneline | wc -l | tr -d ' '`
 	fi
 
+    if ! msbuild /t:restore; then
+        echo "Error: package restore '$1' failed. Make sure you use latest nuget 'nuget update -self'";
+        exit 1;
+    fi
+
 	if [[ "$1" == *iOS ]]; then	
 		echo "Info: iOS project detected. Using 'msbuild' and 'nuget' instead of 'dotnet' ==============="	
 
-		if ! nuget restore; then
-			echo "Error: nuget restore '$1' failed. Make sure you use latest nuget 'nuget update -self'";
-			exit 1;
-		fi
 		PACK_ARGS="-OutputDirectory bin/$CONFIG -Build -Properties Configuration=$CONFIG -Suffix $SUFFIX"
 		if ! nuget pack $PACK_ARGS; then
 			echo "Error: 'nuget pack $PACK_ARGS' failed"
@@ -43,10 +45,7 @@ function rebuild()
 		fi
 	else
 		echo "Info: Normal project. Using 'dotnet' tools instead of 'msbuild' and 'nuget' ==============="	
-		if ! dotnet restore; then
-			echo "Error: dotnet restore '$1' failed";
-			exit 1;
-		fi
+
 		PACK_ARGS="--version-suffix $SUFFIX -c $CONFIG"
 		if ! dotnet pack $PACK_ARGS ; then
 			echo "Error: 'dotnet pack --version-suffix $SUFFIX -c $CONFIG' in '$1' failed";
@@ -61,14 +60,18 @@ function rebuild()
 }
 
 if [ "$PROJECT" == "all" ]; then
-	if ! rebuild Qoden.Reflection/Qoden.Reflection; then exit 1; fi
+	if ! rebuild Qoden.Reflection/Qoden.Reflection; then exit 1; fi    
 	if ! rebuild Qoden.Format/Qoden.Format; then exit 1; fi
 	if ! rebuild Qoden.Validation/Qoden.Validation; then exit 1; fi
+    if ! rebuild Qoden.Util/Qoden.Util; then exit 1; fi
+    if ! rebuild Qoden.Validation/Qoden.Validation.AspNetCore; then exit 1; fi
 	if ! rebuild Qoden.Binding/Qoden.Binding; then exit 1; fi
-	if ! rebuild Qoden.UI/Qoden.UI; then exit 1; fi
+	if ! rebuild Qoden.UI/Qoden.UI.Abstractions; then exit 1; fi
 	if ! rebuild Qoden.UI/Qoden.UI.iOS; then exit 1; fi
 	if ! rebuild Qoden.SlideController/Qoden.SlideController.iOS; then exit 1; fi
 	if ! rebuild Qoden.Calendar/Qoden.Calendar.iOS; then exit 1; fi
+    if ! rebuild Qoden.Auth/Qoden.Auth.Abstractions; then exit 1; fi
+    if ! rebuild Qoden.Auth/Qoden.Auth.iOS; then exit 1; fi
 else
-	rebuild "$PROJECT/$PROJECT"
+	rebuild "$PROJECT"
 fi
