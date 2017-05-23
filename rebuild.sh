@@ -72,6 +72,7 @@ if [ "$PROJECT" == "all" ]; then
 	if ! rebuild Qoden.Calendar/Qoden.Calendar.iOS; then exit 1; fi
     if ! rebuild Qoden.Auth/Qoden.Auth.Abstractions; then exit 1; fi
     if ! rebuild Qoden.Auth/Qoden.Auth.iOS; then exit 1; fi
+    if ! rebuild Qoden.Serilog/Qoden.Serilog; then exit 1; fi
 else
 	rebuild "$PROJECT"
 fi
