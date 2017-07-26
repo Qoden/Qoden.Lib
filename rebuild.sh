@@ -66,8 +66,10 @@ function rebuild()
 	if ! mv bin/$CONFIG/*.nupkg $REPO; then 
 		echo "Cannot 'mv bin/$CONFIG/*.nupkg $REPO'"
 		exit 1;
-	fi
+	fi	
 }
+
+rm -rf ~/.nuget/qoden.*
 
 if [ "$PROJECT" == "all" ]; then
 	if ! rebuild Qoden.Reflection/Qoden.Reflection; then exit 1; fi    
