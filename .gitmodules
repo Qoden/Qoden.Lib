@@ -1,15 +1,6 @@
-[submodule "Qoden.Reflection"]
-	path = Qoden.Reflection
-	url = https://github.com/Qoden/Qoden.Reflection.git
-[submodule "Qoden.Binding"]
-	path = Qoden.Binding
-	url = https://github.com/Qoden/Qoden.Binding.git
 [submodule "Qoden.Calendar"]
 	path = Qoden.Calendar
 	url = https://github.com/Qoden/Qoden.Calendar.git
-[submodule "Qoden.Format"]
-	path = Qoden.Format
-	url = https://github.com/Qoden/Qoden.Format.git
 [submodule "Qoden.SlideController"]
 	path = Qoden.SlideController
 	url = https://github.com/Qoden/Qoden.SlideController.git
@@ -21,9 +12,6 @@
 	url = https://github.com/Qoden/Qoden.Validation.git
 [submodule "Serilog"]
 	path = Serilog
-	url = https://github.com/Qoden/Serilog.git
-[submodule "Qoden.Serilog"]
-	path = Qoden.Serilog
 	url = https://github.com/Qoden/Serilog.git
 [submodule "Qoden.Auth"]
 	path = Qoden.Auth
